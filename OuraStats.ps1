@@ -9,17 +9,17 @@ Param(
 ##
 
 $token_uri = "https://api.ouraring.com/v1";
-$token = <access token>";
+$token = "<access token>";
 
 if ($end_date)
 {
-    $activity_url = $token_uri + "/" + $activity_type + "?start=" + $start_date + ""&"end=" + $end_date + ""&"access_token=" + $token
+    $activity_url = $token_uri + "/" + $activity_type + "?start=" + $start_date + "&end=" + $end_date + "&access_token=" + $token
 }
 else {
-    $activity_url = $token_uri + "/" + $activity_type + "?start=" + $start_date + ""&"access_token=" + $token
+    $activity_url = $token_uri + "/" + $activity_type + "?start=" + $start_date + "&access_token=" + $token
 }
 
-$headers = @{"Authorization"="Bearer " + $token}"
+$headers = @{"Authorization"="Bearer " + $token}
 
 $request = Invoke-RestMethod $activity_url -Method GET -Headers $headers
 Write-Output $request 
